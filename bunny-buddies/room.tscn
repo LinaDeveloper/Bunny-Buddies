@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://rxtxwe1g7qer"]
+
+[ext_resource type="PackedScene" uid="uid://qfpb5j8qpx08" path="res://bunny.tscn" id="1_bisa2"]
+[ext_resource type="Script" uid="uid://btbwc8xp5dbyw" path="res://room.gd" id="1_v5vuv"]
+[ext_resource type="Texture2D" uid="uid://pxg1j2ba3uth" path="res://- - - .png" id="2_4o3f6"]
+[ext_resource type="Texture2D" uid="uid://bmyvrowyhdlj3" path="res://config.png" id="2_v5vuv"]
+
+[node name="Room" type="Control" unique_id=1209903232]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v5vuv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1795467344]
+layout_mode = 0
+offset_left = 52.0
+offset_right = 370.0
+offset_bottom = 70.0
+
+[node name="Stats" type="HBoxContainer" parent="VBoxContainer" unique_id=992337433]
+layout_mode = 2
+
+[node name="Time" type="RichTextLabel" parent="VBoxContainer/Stats" unique_id=87369351]
+custom_minimum_size = Vector2(75, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "23:59
+Time"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Battery" type="RichTextLabel" parent="VBoxContainer/Stats" unique_id=452780481]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "100%
+charging"
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Health" type="RichTextLabel" parent="VBoxContainer/Stats" unique_id=63281769]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "10/10
+Health"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stats2" type="HBoxContainer" parent="VBoxContainer" unique_id=985310306]
+layout_mode = 2
+
+[node name="Test" type="RichTextLabel" parent="VBoxContainer/Stats2" unique_id=1672604309]
+custom_minimum_size = Vector2(75, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Test"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="test" type="RichTextLabel" parent="VBoxContainer/Stats2" unique_id=1749148558]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Test"
+scroll_active = false
+autowrap_mode = 0
+autowrap_trim_flags = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="tesT" type="RichTextLabel" parent="VBoxContainer/Stats2" unique_id=354244327]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bunny" type="CenterContainer" parent="." unique_id=937584502]
+layout_mode = 0
+offset_right = 542.0
+offset_bottom = 963.0
+
+[node name="Bunny" parent="Bunny" unique_id=388897390 instance=ExtResource("1_bisa2")]
+layout_mode = 2
+
+[node name="Start" type="VBoxContainer" parent="." unique_id=739003501]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.87200004
+anchor_right = 1.0
+anchor_bottom = 0.99700004
+offset_left = 2.0
+offset_top = -0.12005615
+offset_right = -2.0
+offset_bottom = -0.12005615
+alignment = 1
+
+[node name="Button" type="Button" parent="Start" unique_id=93024179]
+layout_mode = 2
+text = "START SESSION"
+
+[node name="config+---" type="VBoxContainer" parent="." unique_id=418221483]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.809
+anchor_right = 1.0
+anchor_bottom = 0.216
+offset_left = 0.13998413
+offset_top = 1.0
+offset_bottom = -0.3600006
+
+[node name="config" type="TextureButton" parent="config+---" unique_id=1688844237]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("2_v5vuv")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="---" type="TextureButton" parent="config+---" unique_id=923015066]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("2_4o3f6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="Start/Button" to="." method="_on_button_pressed"]
