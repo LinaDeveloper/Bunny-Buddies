@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://qfpb5j8qpx08"]
+
+[ext_resource type="Texture2D" uid="uid://fqhh1vxr0jbs" path="res://bunny.png" id="1_u834r"]
+
+[node name="Bunny" type="Control" unique_id=388897390]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1795175013]
+position = Vector2(-1.0000076, -0.99998474)
+scale = Vector2(3.37, 3.49)
+texture = ExtResource("1_u834r")
+region_enabled = true
+region_rect = Rect2(8, 0, 77, 100)

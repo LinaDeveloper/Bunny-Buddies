@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dq6xhplfw5jbi"]
+
+[ext_resource type="Script" uid="uid://cv3s0delr7kr1" path="res://pomodoro.gd" id="1_uwogl"]
+
+[node name="Pomodoro" type="Control" unique_id=2101296088]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uwogl")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2017829539]
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 962.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2039782759]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1692368060]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer/VBoxContainer2" unique_id=1569563679]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Bunny Buddies 🐰"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CenterContainer/VBoxContainer/VBoxContainer2" unique_id=1367444237]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+text = "Topic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CenterContainer/VBoxContainer/VBoxContainer2" unique_id=700892819]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+fill_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1268956480]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=1230962588]
+layout_mode = 2
+text = "START"
+
+[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=46671653]
+layout_mode = 2
+text = "(un)PAUSE"
+
+[node name="Stop" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=321460807]
+layout_mode = 2
+text = "STOP"
+
+[node name="Confirmation" type="ConfirmationDialog" parent="." unique_id=1765163513]
+disable_3d = true
+oversampling_override = 1.0
+mode = 2
+title = "Confirmation"
+initial_position = 1
+size = Vector2i(540, 875)
+always_on_top = true
+content_scale_size = Vector2i(100, 100)
+content_scale_aspect = 1
+accessibility_name = "ConfirmationWindow"
+accessibility_description = "confirmationForExitPomodoro"
+ok_button_text = "Confirm"
+dialog_text = "	Are you sure you want to cancel your timer?"
+
+[connection signal="canceled" from="Confirmation" to="." method="_on_confirmation_canceled"]
+[connection signal="confirmed" from="Confirmation" to="." method="_on_confirmation_confirmed"]

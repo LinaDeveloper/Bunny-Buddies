@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://810yj3ek8jel"]
+
+[ext_resource type="Script" uid="uid://4d1cg2eg61b6" path="res://itens_bought.gd" id="1_3x1sv"]
+[ext_resource type="Texture2D" uid="uid://cxtgf7i43navy" path="res://book.png" id="1_pn2ab"]
+
+[node name="ItensBought" type="Control" unique_id=911993888]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3x1sv")
+
+[node name="Book" type="TextureRect" parent="." unique_id=1481749951]
+layout_mode = 0
+offset_left = -114.0
+offset_top = -122.99999
+offset_right = -14.0
+offset_bottom = -22.999992
+scale = Vector2(2.44, 2.42)
+texture = ExtResource("1_pn2ab")
+
+[connection signal="mouse_entered" from="Book" to="." method="_on_book_mouse_entered"]
+[connection signal="mouse_exited" from="Book" to="." method="_on_book_mouse_exited"]
